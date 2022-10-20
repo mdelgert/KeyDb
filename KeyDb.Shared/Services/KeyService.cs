@@ -20,10 +20,19 @@ public class KeyService : IKeyService
         
         foreach (var key in keys)
         {
-            _dbContext.Keys.Add(key);
-            _dbContext.SaveChanges();
+            var dbKeys = _dbContext.Keys
+                .Where(k => k.Name == key.Name && k.Value == key.Value && k.Type == key.Type)
+                .ToList();
+
+            if (dbKeys.Count == 0)
+            {
+                _dbContext.Keys.Add(key);
+                _dbContext.SaveChanges();
+            }
+            
         }
 
         return Task.CompletedTask;
     }
+    
 }
