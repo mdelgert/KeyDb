@@ -3,3 +3,7 @@ global using Microsoft.Extensions.Hosting;
 global using Microsoft.Extensions.Logging;
 global using Xunit.Abstractions;
 global using Xunit;
+global using KeyDb.Shared.Services;
+global using KeyDb.Shared;
+global using Microsoft.EntityFrameworkCore;
+global using KeyDb.Shared.Helpers;

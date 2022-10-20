@@ -20,5 +20,10 @@ PM> Install-Package Microsoft.EntityFrameworkCore.SqlServer
 PM> Install-Package Microsoft.EntityFrameworkCore.Tools
 ```
 
+[packages/NETCore.Encrypt](https://www.nuget.org/packages/NETCore.Encrypt)
+```console
+PM> Install-Package NETCore.Encrypt
+```
+
 # Links
 [MicrosoftKeyImporterPlugin](https://github.com/svickn/microsoft-key-importer-plugin)

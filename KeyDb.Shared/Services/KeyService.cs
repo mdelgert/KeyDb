@@ -2,6 +2,7 @@
 
 public interface IKeyService
 {
+    Task<List<KeyModel>> ReadAll();
     Task Import(string folderPath);
 }
 
@@ -12,6 +13,12 @@ public class KeyService : IKeyService
     public KeyService(DataContext dbContext)
     {
         _dbContext = dbContext;
+    }
+
+    public Task<List<KeyModel>> ReadAll()
+    {
+        var keys = _dbContext.Keys.ToList();
+        return Task.FromResult(keys);
     }
 
     public Task Import(string folderPath)
