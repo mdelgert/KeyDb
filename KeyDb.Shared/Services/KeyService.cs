@@ -21,7 +21,7 @@ public class KeyService : IKeyService
         foreach (var key in keys)
         {
             var dbKeys = _dbContext.Keys
-                .Where(k => k.Name == key.Name && k.Value == key.Value && k.Type == key.Type)
+                .Where(k => k.Name == key.Name && k.Value == key.Value)
                 .ToList();
             
             if (dbKeys.Count == 0)
