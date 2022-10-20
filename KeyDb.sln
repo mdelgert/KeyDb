@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyDb.Shared", "KeyDb.Shared\KeyDb.Shared.csproj", "{761FDB0A-68A7-4A37-A0C8-B173C121534D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyDb.Shared", "KeyDb.Shared\KeyDb.Shared.csproj", "{761FDB0A-68A7-4A37-A0C8-B173C121534D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyDb.Tests", "KeyDb.Tests\KeyDb.Tests.csproj", "{68EC994B-68E2-47BF-8AD9-4970F84C22D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyDb.Tests", "KeyDb.Tests\KeyDb.Tests.csproj", "{68EC994B-68E2-47BF-8AD9-4970F84C22D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyDb", "KeyDb\KeyDb.csproj", "{35A8F7A5-FB7B-4FFF-A6EF-FB9EB1408DCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyDb", "KeyDb\KeyDb.csproj", "{35A8F7A5-FB7B-4FFF-A6EF-FB9EB1408DCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15D37999-C793-49A5-B0BD-E54A90456CD5}"
+	ProjectSection(SolutionItems) = preProject
+		appsettings.json = appsettings.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

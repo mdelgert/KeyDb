@@ -19,13 +19,15 @@ public static class XmlHelper
 
             foreach (XmlNode node in xml)
             {
+                //var name = node.Attributes["Name"].Value.Replace("\n", string.Empty);
+                var name = node.Attributes["Name"].Value;
                 var key = node.SelectSingleNode("Key").InnerText;
 
                 int length = key.Length;
 
                 if(length <= 29)
                 {
-                    Console.WriteLine(key);
+                    Console.WriteLine($"Name={name} Key={key}");
                 }
             }
 

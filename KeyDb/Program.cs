@@ -1,3 +1,3 @@
-﻿//Console.WriteLine("Hello World!");
-XmlHelper.ParseFolder("C:\\Debug");
-Console.ReadKey();
+﻿var services = Startup.ConfigureServices();
+var serviceProvider = services.BuildServiceProvider();
+serviceProvider.GetService<EntryPoint>()?.Run(args);
