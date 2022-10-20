@@ -20,29 +20,31 @@ public static class XmlHelper
             foreach (XmlNode node in xml)
             {
                 var nameValue = node.Attributes?["Name"]?.Value.Replace("\n", string.Empty);
-                
+
                 string? typeValue = null;
 
-                foreach (XmlNode a in node.ChildNodes)
+                foreach (XmlNode c in node.ChildNodes)
                 {
-                    typeValue = a.Attributes?["Type"]?.Value;
-                }
+                    var keyValue = c.InnerText;
 
-                var keyValue = node.SelectSingleNode("Key")?.InnerText;
-                var length = keyValue?.Length;
-                
-                if (!(length <= 29)) continue;
-                
-                var key = new KeyModel
-                {
-                    Name = nameValue,
-                    Type = typeValue,
-                    Value = keyValue
-                };
-                
-                keys.Add(key);
-                
-                Console.WriteLine($"Name={key.Name} Key={key.Value}");
+                    typeValue = c.Attributes?["Type"]?.Value;
+
+                    var length = keyValue?.Length;
+
+
+                    if (!(length <= 29)) continue;
+
+                    var key = new KeyModel
+                    {
+                        Name = nameValue,
+                        Type = typeValue,
+                        Value = keyValue
+                    };
+
+                    keys.Add(key);
+
+                    Console.WriteLine($"Name={key.Name} Key={key.Value}");
+                }
             }
         }
 
