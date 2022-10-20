@@ -18,17 +18,12 @@ public class KeyService : IKeyService
     {
         var keys = XmlHelper.ParseFolder(folderPath);
         
-        foreach (var key in keys)
+        foreach (var key in from key in keys let dbKeys = _dbContext.Keys
+                     .Where(k => k.ProductName == key.ProductName && k.ProductKey == key.ProductKey)
+                     .ToList() where dbKeys.Count == 0 select key)
         {
-            var dbKeys = _dbContext.Keys
-                .Where(k => k.Name == key.Name && k.Value == key.Value)
-                .ToList();
-            
-            if (dbKeys.Count == 0)
-            {
-                _dbContext.Keys.Add(key);
-                _dbContext.SaveChanges();
-            }
+            _dbContext.Keys.Add(key);
+            _dbContext.SaveChanges();
         }
         
         return Task.CompletedTask;

@@ -1,10 +1,10 @@
 ﻿global using KeyDb.Shared.Helpers;
-global using Microsoft.Extensions.Configuration;
-global using Microsoft.Extensions.Logging;
-global using KeyDb;
-global using Microsoft.Extensions.DependencyInjection;
-global using KeyDb.Shared;
-global using Microsoft.EntityFrameworkCore;
-global using Serilog;
 global using KeyDb.Shared.Models;
 global using KeyDb.Shared.Services;
+global using KeyDb.Shared;
+global using KeyDb;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using Serilog;

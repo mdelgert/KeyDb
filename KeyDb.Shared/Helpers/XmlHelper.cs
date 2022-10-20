@@ -36,14 +36,14 @@ public static class XmlHelper
 
                     var key = new KeyModel
                     {
-                        Name = nameValue,
-                        Type = typeValue,
-                        Value = keyValue
+                        ProductName = nameValue,
+                        ProductType = typeValue,
+                        ProductKey = keyValue
                     };
 
                     keys.Add(key);
 
-                    Console.WriteLine($"Name={key.Name} Key={key.Value}");
+                    //Console.WriteLine($"Name={key.ProductName} Key={key.ProductKey}");
                 }
             }
         }

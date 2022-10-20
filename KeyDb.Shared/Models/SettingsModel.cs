@@ -2,5 +2,5 @@
 
 public class SettingsModel
 {
-    public string DbConnection { get; set; }
+    public string? DbConnection { get; set; }
 }
