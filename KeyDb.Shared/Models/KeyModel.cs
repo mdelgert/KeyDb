@@ -2,6 +2,10 @@
 
 public class KeyModel
 {
-    public string Title { get; set; }
-    public string Value { get; set; }
+    //[Key]
+    public int Id { get; set; }
+    //public int KeyModelId { get; set; }
+    public string? Name { get; set; }
+    public string? Value { get; set; }
+    public string? Type { get; set; }
 }

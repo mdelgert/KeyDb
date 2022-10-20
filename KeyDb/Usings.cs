@@ -7,3 +7,4 @@ global using KeyDb.Shared;
 global using Microsoft.EntityFrameworkCore;
 global using Serilog;
 global using KeyDb.Shared.Models;
+global using KeyDb.Shared.Services;
