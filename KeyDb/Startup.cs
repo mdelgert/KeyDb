@@ -1,4 +1,7 @@
-﻿namespace KeyDb;
+﻿using KeyDb.Shared.Models;
+using Microsoft.Extensions.Configuration;
+
+namespace KeyDb;
 
 public static class Startup
 {
@@ -11,7 +14,9 @@ public static class Startup
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false);
 
         IConfiguration configuration = builder.Build();
-        
+
+        var settings = configuration.GetRequiredSection("Settings").Get<SettingsModel>();
+
         services.AddSingleton(configuration);
 
         Log.Logger = new LoggerConfiguration()
@@ -39,3 +44,5 @@ public static class Startup
         return services;
     }
 }
+
+//https://github.com/dotnet/runtime/issues/40978
