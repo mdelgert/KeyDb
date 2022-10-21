@@ -16,36 +16,41 @@ public class EntryPoint
     {
         _logger.LogInformation("Begin:");
 
-        if (args.Length == 0)
+        var rootCommand = new RootCommand("KeyDb application.");
+
+        var searchOption = new Option<string>(
+            name: "--search",
+            description: "Search for product name in the database.");
+        
+        var folderOption = new Option<string>(
+            name: "--folder",
+            description: "XML folder path to import.");
+
+        rootCommand.Add(searchOption);
+
+        rootCommand.Add(folderOption);
+
+        rootCommand.SetHandler(async (name, folder) =>
         {
-            Console.WriteLine("Invalid args");
-            return;
-        }
+            await _keyService.Run(name, folder);
+        }, searchOption, folderOption);
 
-        var command = args[0];
-
-        switch (command)
-        {
-            case "-a":
-                await _keyService.ReadAll();
-                break;
-            case "-s":
-                await _keyService.SearchName(args[1]);
-                break;
-            case "-i":
-                await _keyService.Import(args[1]);
-                break;
-
-            default:
-                Console.WriteLine("Invalid command");
-                break;
-        }
+        await rootCommand.InvokeAsync(args);
 
         _logger.LogInformation("End:");
     }
+    
 }
 
+//https://learn.microsoft.com/en-us/dotnet/standard/commandline/get-started-tutorial
+//https://betterprogramming.pub/providing-help-to-your-console-apps-c686e2d5f6c1
+//https://github.com/dotnet/command-line-api
+//https://www.nuget.org/packages/System.CommandLine
 //https://makolyte.com/csharp-parsing-commands-and-arguments-in-a-console-app/
+//https://stackoverflow.com/questions/19528669/adding-help-parameter-to-c-sharp-console-application
+//https://dotnetcoretutorials.com/2021/01/16/creating-modern-and-helpful-command-line-utilities-with-system-commandline/
+//https://github.com/dotnet/command-line-api/blob/main/docs/Your-first-app-with-System-CommandLine-DragonFruit.md
+//https://github.com/mayuki/Cocona#options
 
 //var settings = _configuration.GetRequiredSection("Settings").Get<SettingsModel>();
 //foreach (var arg in args)
@@ -58,3 +63,29 @@ public class EntryPoint
 //await _keyService.ReadAll();
 //await _keyService.SearchName("");
 //Console.ReadKey();
+
+// if (args.Length == 0)
+// {
+//     Console.WriteLine("Invalid args");
+//     return;
+// }
+
+// var command = args[0];
+//
+// switch (command)
+// {
+//     case "-a":
+//         await _keyService.ReadAll();
+//         break;
+//     case "-s":
+//         await _keyService.SearchName(args[1]);
+//         break;
+//     case "-i":
+//         await _keyService.Import(args[1]);
+//         break;
+//     case "-h":
+//         break;
+//     default:
+//         Console.WriteLine("Invalid command");
+//         break;
+// }

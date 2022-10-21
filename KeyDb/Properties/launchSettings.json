@@ -1,8 +1,7 @@
 {
   "profiles": {
     "KeyDb": {
-      "commandName": "Project",
-      "commandLineArgs": "-s \"win\""
+      "commandName": "Project"
     }
   }
 }

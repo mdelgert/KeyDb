@@ -2,6 +2,7 @@
 
 public interface IKeyService
 {
+    Task Run(string? name, string? folder);
     Task<List<KeyModel>> SearchName(string name);
     Task<List<KeyModel>> ReadAll();
     Task Import(string folderPath);
@@ -16,10 +17,27 @@ public class KeyService : IKeyService
         _dbContext = dbContext;
     }
 
+    public async Task Run(string? name, string? folder)
+    {
+        if (folder != null)
+        {
+            await Import(folder);
+        }
+        
+        if (name == null)
+        {
+            await ReadAll();
+        }
+        else
+        {
+            await SearchName(name);
+        }
+    }
+    
     public Task<List<KeyModel>> SearchName(string name)
     {
         var keys = _dbContext.Keys
-            .Where(k => k.ProductName.Contains(name))
+            .Where(k => k.ProductName.ToLower().Contains(name.ToLower()))
             .ToList();
         
         foreach (var key in keys)

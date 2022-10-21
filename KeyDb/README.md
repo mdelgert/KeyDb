@@ -30,6 +30,11 @@ PM> Install-Package Serilog.Settings.Configuration
 PM> Install-Package Serilog.Sinks.File
 ```
 
+[System.CommandLine](https://www.nuget.org/packages/System.CommandLine)
+```console
+PM> Install-Package System.CommandLine
+```
+
 # Links
 [Configuration Basics](https://github.com/serilog/serilog/wiki/Configuration-Basics)
 [Console arguments](https://stackoverflow.com/questions/6151036/console-app-arguments-how-arguments-are-passed-to-main-method)
