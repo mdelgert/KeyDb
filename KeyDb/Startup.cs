@@ -21,7 +21,7 @@ public static class Startup
         services.AddLogging(builder =>
         {
             builder.AddConfiguration(configuration.GetSection("Logging"));
-            builder.AddConsole();
+            //builder.AddConsole();
             builder.AddSerilog();
         });
 

@@ -45,3 +45,18 @@ PM> Install-Package System.CommandLine
 [Migrations Overview](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli)
 [Entity Framework Core tools reference - .NET Core CLI](https://learn.microsoft.com/en-us/ef/core/cli/dotnet)
 [Design-time DbContext Creation](https://learn.microsoft.com/en-us/ef/core/cli/dbcontext-creation?tabs=dotnet-core-cli)
+[adding-programs-to-path](https://unix.stackexchange.com/questions/183295/adding-programs-to-path)
+[how-to-add-path-of-a-program-to-path-environment-variable](https://askubuntu.com/questions/109381/how-to-add-path-of-a-program-to-path-environment-variable)
+
+
+# Ubuntu path
+https://www.cyberciti.biz/faq/create-permanent-bash-alias-linux-unix/
+https://unix.stackexchange.com/questions/3809/how-can-i-make-a-program-executable-from-everywhere
+https://askubuntu.com/questions/381958/add-program-to-path
+https://unix.stackexchange.com/questions/183295/adding-programs-to-path
+https://askubuntu.com/questions/109381/how-to-add-path-of-a-program-to-path-environment-variable
+
+nano .bashrc
+
+# Add KeyDb program
+alias keydb='~/KeyDb/KeyDb'
