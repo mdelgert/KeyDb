@@ -31,6 +31,7 @@ PM> Install-Package Serilog.Sinks.File
 ```
 
 # Links
+[Configuration Basics](https://github.com/serilog/serilog/wiki/Configuration-Basics)
 [Console arguments](https://stackoverflow.com/questions/6151036/console-app-arguments-how-arguments-are-passed-to-main-method)
 [Main() and command-line arguments](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/main-command-line)
 [Creating a console app with Dependency Injection in .NET Core](https://siderite.dev/blog/creating-console-app-with-dependency-injection-in-/)
